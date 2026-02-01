@@ -1,0 +1,44 @@
+{# Navigation Bar - Sticky, transparent over hero, solid with blur on scroll #}
+<header id="site-nav" class="nav-bar fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out" role="banner" aria-label="Main navigation">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary">
+        <div class="flex items-center justify-between h-16 md:h-[4.5rem]">
+            {# Logo - left #}
+            <a href="{{ url_for('main.index') }}" class="flex-shrink-0 flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded" aria-label="Global Economic Foundation - Home">
+                <img src="{{ url_for('static', filename='images/logo-website.png') }}" alt="Global Economic Foundation logo" class="nav-logo h-8 md:h-9 w-auto object-contain transition-opacity duration-300 hover:opacity-90">
+            </a>
+
+            {# Desktop menu - center/right #}
+            <div class="hidden md:flex md:items-center md:gap-1 lg:gap-2">
+                <a href="{{ url_for('main.index') }}#home" class="nav-link">Home</a>
+                <a href="{{ url_for('main.index') }}#what-we-do" class="nav-link">What We Do</a>
+                <a href="{{ url_for('main.index') }}#about" class="nav-link">About</a>
+                <a href="{{ url_for('main.index') }}#donate" class="nav-cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white font-semibold text-sm transition-all duration-300 hover:bg-green-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                    Donate Now
+                    <span class="nav-cta-arrow inline-block transition-transform duration-300" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            {# Mobile menu button #}
+            <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary nav-mobile-btn-color" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                <svg class="w-6 h-6 nav-open-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg class="w-6 h-6 nav-close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        {# Mobile menu - slide down #}
+        <div id="mobile-menu" class="mobile-menu md:hidden overflow-hidden transition-all duration-300 ease-out" aria-hidden="true" hidden>
+            <div class="py-4 space-y-1 border-t border-white/10">
+                <a href="{{ url_for('main.index') }}#home" class="nav-mobile-link block px-4 py-3">Home</a>
+                <a href="{{ url_for('main.index') }}#what-we-do" class="nav-mobile-link block px-4 py-3">What We Do</a>
+                <a href="{{ url_for('main.index') }}#about" class="nav-mobile-link block px-4 py-3">About</a>
+                <a href="{{ url_for('main.index') }}#donate" class="nav-mobile-cta block mx-4 mt-4 py-3 rounded-full bg-primary text-white text-center font-semibold">
+                    Donate Now
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

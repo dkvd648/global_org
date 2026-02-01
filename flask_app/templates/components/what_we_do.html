@@ -1,0 +1,153 @@
+{# What We Do Section - Global Economic Foundation
+   Editorial alternating grid: image + content blocks, soft cream background.
+   Scroll-triggered animations via Intersection Observer (main.js).
+   Image prompts embedded as comments below each item.
+#}
+<section id="what-we-do" class="what-we-do-section py-16 sm:py-20 lg:py-28 overflow-hidden" aria-labelledby="what-we-do-heading" data-what-we-do-section style="background-color: white;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {# ---------- Section Header ---------- #}
+    <header class="text-center mb-14 sm:mb-18 lg:mb-20">
+      {# Top pill label - light blue background, blue text #}
+      <p class="what-we-do-pill inline-block px-4 py-2 rounded-full font-semibold text-xs uppercase tracking-wider mb-6 text-white" style="background-color: #1c8fc8;" data-scroll-reveal data-reveal-order="0">
+        WHAT WE DO
+      </p>
+      {# Main heading - Instrument Serif italic, no bold #}
+      <h1 id="what-we-do-heading" class="font-sans font-normal text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight tracking-tight max-w-3xl mx-auto" data-scroll-reveal data-reveal-order="1">
+        Global issues <span class="italic" style="font-family: 'Instrument Serif', Georgia, serif;">we work on</span>
+      </h1>
+    </header>
+
+    {# ---------- Editorial Grid: alternating image + content ---------- #}
+    <div class="what-we-do-grid space-y-0">
+      {# Item 1: Affordable Housing Solutions
+         Image prompt: "A realistic documentary style photograph of a low income family standing proudly in front of a newly built affordable home. Natural daylight, warm tones, subtle smiles, sense of stability and hope. Diverse family members including older adults. Clean modern housing environment. No text, no logos, high resolution."
+      #}
+      <article class="what-we-do-row grid lg:grid-cols-2 gap-10 lg:gap-0 items-stretch lg:overflow-hidden lg:rounded-2xl lg:shadow-lg" data-scroll-reveal data-reveal-order="2">
+        <div class="what-we-do-image-block order-2 lg:order-1">
+          <div class="what-we-do-image-wrapper h-full overflow-hidden rounded-2xl lg:rounded-none">
+            <img
+              src="{{ url_for('static', filename='images/what-we-do/housing.jpg') }}"
+              alt="A family standing proudly in front of a newly built affordable home"
+              class="what-we-do-image w-full object-cover transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="what-we-do-content order-1 lg:order-2">
+          <h3 class="font-sans font-normal text-2xl sm:text-3xl text-charcoal mb-4">Affordable Housing Solutions</h3>
+          <p class="text-base sm:text-lg leading-relaxed mb-6" style="color: #6b7280;">
+            Creating safe, affordable, and sustainable homes for low income families and older adults.
+          </p>
+          <a href="#programs" class="what-we-do-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-charcoal text-charcoal font-normal text-sm transition-all duration-300 hover:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit">
+            Learn more
+            <span class="what-we-do-btn-arrow inline-block transition-transform duration-300" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      {# Item 2: Mentorship & Community
+         Image prompt: "A candid photo of a mentor sitting with young adults in a community space, discussing ideas and learning together. Diverse group, notebooks and laptops on table. Warm natural lighting, collaborative atmosphere, nonprofit community setting. Documentary photography style, no text."
+      #}
+      <article class="what-we-do-row grid lg:grid-cols-2 gap-10 lg:gap-0 items-stretch lg:overflow-hidden lg:rounded-2xl lg:shadow-lg" data-scroll-reveal data-reveal-order="3">
+        <div class="what-we-do-image-block order-2 lg:order-2">
+          <div class="what-we-do-image-wrapper h-full overflow-hidden rounded-2xl lg:rounded-none">
+            <img
+              src="{{ url_for('static', filename='images/what-we-do/mentorship.jpg') }}"
+              alt="A mentor and young adults collaborating in a community space"
+              class="what-we-do-image w-full object-cover transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="what-we-do-content order-1 lg:order-1">
+          <h3 class="font-sans font-normal text-2xl sm:text-3xl text-charcoal mb-4">Mentorship & Community</h3>
+          <p class="text-base sm:text-lg leading-relaxed mb-6" style="color: #6b7280;">
+            Our network of mentors, volunteers, and partner organizations guide participants through career advancement, financial literacy, and community engagement.
+          </p>
+          <a href="#programs" class="what-we-do-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-charcoal text-charcoal font-normal text-sm transition-all duration-300 hover:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit">
+            Learn more
+            <span class="what-we-do-btn-arrow inline-block transition-transform duration-300" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      {# Item 3: Business Development
+         Image prompt: "A realistic photo of a small business owner working in a local shop, reviewing plans with a consultant. Diverse entrepreneur, shelves or workspace visible, professional yet approachable setting. Natural light, modern documentary style, no branding or text."
+      #}
+      <article class="what-we-do-row grid lg:grid-cols-2 gap-10 lg:gap-0 items-stretch lg:overflow-hidden lg:rounded-2xl lg:shadow-lg" data-scroll-reveal data-reveal-order="4">
+        <div class="what-we-do-image-block order-2 lg:order-1">
+          <div class="what-we-do-image-wrapper h-full overflow-hidden rounded-2xl lg:rounded-none">
+            <img
+              src="{{ url_for('static', filename='images/what-we-do/business.jpg') }}"
+              alt="A small business owner reviewing plans with a consultant"
+              class="what-we-do-image w-full object-cover transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="what-we-do-content order-1 lg:order-2">
+          <h3 class="font-sans font-normal text-2xl sm:text-3xl text-charcoal mb-4">Business Development</h3>
+          <p class="text-base sm:text-lg leading-relaxed mb-6" style="color: #6b7280;">
+            We support small businesses and entrepreneurs through practical training, market access, and strategic guidance helping them start, grow, and sustain enterprises that create jobs and strengthen local economies.
+          </p>
+          <a href="#programs" class="what-we-do-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-charcoal text-charcoal font-normal text-sm transition-all duration-300 hover:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit">
+            Learn more
+            <span class="what-we-do-btn-arrow inline-block transition-transform duration-300" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      {# Item 4: Advocacy & Empowerment
+         Image prompt: "A powerful yet calm image of community members standing together during a local advocacy meeting. People listening and engaging respectfully. Inclusive and diverse group. Neutral tones, authentic expressions, nonprofit documentary photography style, no signs or text."
+      #}
+      <article class="what-we-do-row grid lg:grid-cols-2 gap-10 lg:gap-0 items-stretch lg:overflow-hidden lg:rounded-2xl lg:shadow-lg" data-scroll-reveal data-reveal-order="5">
+        <div class="what-we-do-image-block order-2 lg:order-2">
+          <div class="what-we-do-image-wrapper h-full overflow-hidden rounded-2xl lg:rounded-none">
+            <img
+              src="{{ url_for('static', filename='images/what-we-do/advocacy.jpg') }}"
+              alt="Community members engaging during a local advocacy meeting"
+              class="what-we-do-image w-full object-cover transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="what-we-do-content order-1 lg:order-1">
+          <h3 class="font-sans font-normal text-2xl sm:text-3xl text-charcoal mb-4">Advocacy & Empowerment</h3>
+          <p class="text-base sm:text-lg leading-relaxed mb-6" style="color: #6b7280;">
+            By collaborating with local organizations, we address systemic barriers to equality, build community resilience, and advance enduring social justice initiatives.
+          </p>
+          <a href="#programs" class="what-we-do-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-charcoal text-charcoal font-normal text-sm transition-all duration-300 hover:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit">
+            Learn more
+            <span class="what-we-do-btn-arrow inline-block transition-transform duration-300" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      {# Item 5: Skills & Certification
+         Image prompt: "A realistic photograph of individuals in a construction training environment learning hands on skills. Safety helmets, tools, instructor guiding participants. Diverse group including immigrants. Bright natural lighting, professional training atmosphere, no logos or text."
+      #}
+      <article class="what-we-do-row grid lg:grid-cols-2 gap-10 lg:gap-0 items-stretch lg:overflow-hidden lg:rounded-2xl lg:shadow-lg" data-scroll-reveal data-reveal-order="6">
+        <div class="what-we-do-image-block order-2 lg:order-1">
+          <div class="what-we-do-image-wrapper h-full overflow-hidden rounded-2xl lg:rounded-none">
+            <img
+              src="{{ url_for('static', filename='images/what-we-do/skills.jpg') }}"
+              alt="Individuals learning hands-on construction skills in a training environment"
+              class="what-we-do-image w-full object-cover transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="what-we-do-content order-1 lg:order-2">
+          <h3 class="font-sans font-normal text-2xl sm:text-3xl text-charcoal mb-4">Skills & Certification</h3>
+          <p class="text-base sm:text-lg leading-relaxed mb-6" style="color: #6b7280;">
+            We provide construction trade training, licensing preparation, certification support, and job placement assistance for immigrants and marginalized individuals.
+          </p>
+          <a href="#programs" class="what-we-do-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-charcoal text-charcoal font-normal text-sm transition-all duration-300 hover:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit">
+            Learn more
+            <span class="what-we-do-btn-arrow inline-block transition-transform duration-300" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+{# Join Us CTA Section - Global Economic Foundation
+   Two-column layout: image left, content right. CTA strip with three buttons below.
+   Place a volunteer photo at static/images/join-us-volunteers.jpg for best results.
+#}
+<section id="join-us" class="join-us-section" aria-labelledby="join-us-heading" data-join-us-section>
+  {# ---------- Main Two-Column Block ---------- #}
+  <div class="join-us-grid">
+    {# Left: Large lifestyle image - fills entire column #}
+    <div class="join-us-image-block">
+      <img
+        src="{{ url_for('static', filename='images/join-us-volunteers.jpg') }}"
+        alt="Diverse volunteers standing together, wearing casual volunteer shirts, arms around each other in a warm and inclusive nonprofit atmosphere"
+        class="join-us-image"
+        loading="lazy"
+      />
+    </div>
+    {# Right: Content - soft cream background, vertically centered #}
+    <div class="join-us-content-block">
+      <div class="join-us-content-inner">
+        <h2 id="join-us-heading" class="join-us-headline" data-scroll-reveal data-reveal-order="0">
+          <span class="join-us-headline-sans">Join us in making</span>
+          <span class="join-us-headline-serif">a difference</span>
+        </h2>
+        <p class="join-us-body" data-scroll-reveal data-reveal-order="1">
+          Every action counts, and your support can create real lasting change. Together, we can make impact.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {# ---------- CTA Strip: Three Buttons ---------- #}
+  <div class="join-us-cta-strip">
+    <a href="#mentor" class="join-us-strip-btn join-us-strip-btn-blue">
+      BECOME A MENTOR
+    </a>
+    <a href="#partner" class="join-us-strip-btn join-us-strip-btn-green">
+      PARTNER WITH US
+    </a>
+    <a href="#volunteer" class="join-us-strip-btn join-us-strip-btn-red">
+      VOLUNTEER LOCALLY OR VIRTUALLY
+    </a>
+  </div>
+</section>

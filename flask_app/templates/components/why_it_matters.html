@@ -1,0 +1,25 @@
+{# Why It Matters - Global Economic Foundation
+   Narrative section: radial gradient background, soft text blend, optional mask fade.
+   Typography: Instrument Serif for headline, Inter for body. No pure white; reduced opacity for blend.
+   Scroll-triggered animations via Intersection Observer.
+#}
+<section id="why-it-matters" class="why-it-matters-section overflow-hidden" aria-labelledby="why-it-matters-heading" data-why-it-matters-section>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28 text-center">
+    {# ---------- Section Header: pill only ---------- #}
+    <p class="why-it-matters-pill inline-block px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider mb-8" style="background-color: #dcfce7; color: #16a34a;" data-scroll-reveal data-reveal-order="0">
+      WHY IT MATTERS
+    </p>
+
+    {# ---------- Content wrapper: mask fades edges; headline + text + accent ---------- #}
+    <div class="why-matters-content why-it-matters-body-wrapper" data-scroll-reveal data-reveal-order="1">
+      <h2 id="why-it-matters-heading" class="why-matters-heading">
+        Every dream needs a helping hand.
+      </h2>
+      <p class="why-matters-text">
+        For too many immigrants and underserved families, barriers like language, credentials, and access to training keep talent and ambition sidelined. At Global Economic Foundation, we believe in turning those barriers into bridges. When someone gains a marketable skill, a job, confidence, and community, it does not just change one life. It strengthens families, revitalizes neighborhoods, and builds a future where dignity and opportunity go hand in hand.
+      </p>
+      <div class="why-matters-line" aria-hidden="true"></div>
+      <div class="why-matters-dot" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>

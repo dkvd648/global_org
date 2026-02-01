@@ -1,0 +1,110 @@
+{# How We Make It Happen - Global Economic Foundation
+   Work process cards: three cards with background images, soft cream background,
+   colored accent bars. Scroll-triggered animations via Intersection Observer.
+   Image prompts included as comments below each card.
+#}
+<section id="how-we-make-it-happen" class="how-we-make-it-happen-section py-16 sm:py-20 lg:py-28 overflow-hidden" aria-labelledby="how-we-make-it-happen-heading" data-how-we-make-it-happen-section style="background-color: #ffffff;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {# ---------- Section Header ---------- #}
+    <header class="text-center mb-14 sm:mb-18 lg:mb-20">
+      {# Top pill label - green background, white text #}
+      <p class="how-we-make-it-happen-pill inline-block px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider mb-6 text-white" style="background-color: #16a34a;" data-scroll-reveal data-reveal-order="0">
+        WORK PROCESS
+      </p>
+      {# Main heading - "How we make" + "it happen" in Instrument Serif italic #}
+      <h2 id="how-we-make-it-happen-heading" class="font-sans text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight tracking-tight max-w-3xl mx-auto" data-scroll-reveal data-reveal-order="1">
+        How we make <span class="font-[family-name:var(--font-instrument-serif)] italic" style="font-family: 'Instrument Serif', Georgia, serif;">it happen</span>
+      </h2>
+    </header>
+
+    {# ---------- Card Grid: three cards in a row on desktop, stacked on mobile ---------- #}
+    <div class="how-we-make-it-happen-grid grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      {# Card 1: Economic Development
+         Image: econmic-dev-600x244.jpg
+         Regenerated image prompt: "A realistic documentary style image of a small business owner receiving guidance or funding support, community setting, warm natural lighting, hopeful and professional tone, no text or logos."
+      #}
+      <article class="how-we-make-it-happen-card group" data-scroll-reveal data-reveal-order="2">
+        <a href="#programs" class="process-card how-we-make-it-happen-card-link block h-full relative overflow-hidden rounded-2xl shadow-md">
+          {# Card content #}
+          <div class="how-we-make-it-happen-card-content">
+            <div class="how-we-make-it-happen-card-image-wrapper relative h-48 sm:h-52 overflow-hidden">
+              <img
+                src="{{ url_for('static', filename='images/econmic-dev-600x244.jpg') }}"
+                alt="Small business owner receiving guidance or funding support in a community setting"
+                class="how-we-make-it-happen-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out"
+                loading="lazy"
+              />
+              <div class="how-we-make-it-happen-card-overlay absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.35) 40%, transparent 70%);"></div>
+            </div>
+            <div class="p-6 sm:p-7 text-center">
+              <h3 class="font-sans font-bold text-xl sm:text-2xl mb-3" style="color: #0f172a;">Economic Development</h3>
+              <p class="text-sm sm:text-base leading-relaxed" style="color: #6b7280; line-height: 1.6;">
+                We empower communities through micro finance, small business opportunities, and access to capital that helps individuals start and grow sustainable enterprises.
+              </p>
+            </div>
+          </div>
+          {# Bottom accent bar - absolutely positioned, separate layer #}
+          <span class="accent-bar accent-green" aria-hidden="true"></span>
+        </a>
+      </article>
+
+      {# Card 2: Employment & Leadership Growth
+         Image: employment-768x512.jpg
+         Regenerated image prompt: "A realistic photo of diverse young adults in a professional training or academic environment, engaged in learning and leadership activities, natural lighting, authentic nonprofit style, no text."
+      #}
+      <article class="how-we-make-it-happen-card group" data-scroll-reveal data-reveal-order="3">
+        <a href="#programs" class="process-card how-we-make-it-happen-card-link block h-full relative overflow-hidden rounded-2xl shadow-md">
+          {# Card content #}
+          <div class="how-we-make-it-happen-card-content">
+            <div class="how-we-make-it-happen-card-image-wrapper relative h-48 sm:h-52 overflow-hidden">
+              <img
+                src="{{ url_for('static', filename='images/employment-768x512.jpg') }}"
+                alt="Diverse young adults in a professional training or academic environment engaged in learning"
+                class="how-we-make-it-happen-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out"
+                loading="lazy"
+              />
+              <div class="how-we-make-it-happen-card-overlay absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.35) 40%, transparent 70%);"></div>
+            </div>
+            <div class="p-6 sm:p-7 text-center">
+              <h3 class="font-sans font-bold text-xl sm:text-2xl mb-3" style="color: #0f172a;">Employment & Leadership Growth</h3>
+              <p class="text-sm sm:text-base leading-relaxed" style="color: #6b7280; line-height: 1.6;">
+                We provide year round employment pathways, academic support, and leadership development programs that prepare individuals for long term success.
+              </p>
+            </div>
+          </div>
+          {# Bottom accent bar - absolutely positioned, separate layer #}
+          <span class="accent-bar accent-blue" aria-hidden="true"></span>
+        </a>
+      </article>
+
+      {# Card 3: Housing & Economic Stability
+         Image: slider.jpg
+         Regenerated image prompt: "A warm documentary style image of families near affordable housing developments, sense of safety and community, natural daylight, no logos or text."
+      #}
+      <article class="how-we-make-it-happen-card group" data-scroll-reveal data-reveal-order="4">
+        <a href="#programs" class="process-card how-we-make-it-happen-card-link block h-full relative overflow-hidden rounded-2xl shadow-md">
+          {# Card content #}
+          <div class="how-we-make-it-happen-card-content">
+            <div class="how-we-make-it-happen-card-image-wrapper relative h-48 sm:h-52 overflow-hidden">
+              <img
+                src="{{ url_for('static', filename='images/slider.jpg') }}"
+                alt="Families near affordable housing developments with a sense of safety and community"
+                class="how-we-make-it-happen-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out"
+                loading="lazy"
+              />
+              <div class="how-we-make-it-happen-card-overlay absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.35) 40%, transparent 70%);"></div>
+            </div>
+            <div class="p-6 sm:p-7 text-center">
+              <h3 class="font-sans font-bold text-xl sm:text-2xl mb-3" style="color: #0f172a;">Housing & Economic Stability</h3>
+              <p class="text-sm sm:text-base leading-relaxed" style="color: #6b7280; line-height: 1.6;">
+                We strengthen housing driven economic development by supporting affordable housing initiatives that create stability and long term financial resilience.
+              </p>
+            </div>
+          </div>
+          {# Bottom accent bar - absolutely positioned, separate layer #}
+          <span class="accent-bar accent-red" aria-hidden="true"></span>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>

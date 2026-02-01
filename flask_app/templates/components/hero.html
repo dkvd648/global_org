@@ -1,0 +1,35 @@
+{# Hero Section - Full viewport, dark overlay, left-aligned content, cinematic background #}
+<section id="home" class="hero-section relative min-h-screen flex items-center overflow-hidden" aria-label="Hero - Unite. Act. Transform">
+    {# Background image with zoom animation; dark gradient overlay for contrast #}
+    <div class="hero-bg absolute inset-0 bg-charcoal" aria-hidden="true">
+        <div class="hero-bg-image absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ url_for('static', filename='images/hero.jpg') }}');" role="img" aria-label="Diverse children smiling, symbolizing hope and global impact"></div>
+        <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-charcoal/50" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div class="max-w-2xl">
+            {# Caption - small and sharp #}
+            <p class="hero-caption text-sm font-medium uppercase tracking-widest mb-4 opacity-0 animate-slide-up-fade" style="--delay: 0.1s;"><span style="color: #16a34a;">Unite.</span> <span style="color: #2563eb;">Act.</span> <span style="color: #dc2626;">Transform.</span></p>
+            {# Heading - Instrument Serif, no bold, stylish #}
+            <h1 class="hero-heading hero-heading-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6 opacity-0 animate-slide-up-fade" style="--delay: 0.2s;">
+                From Barriers<br>
+                To Opportunity.<br>
+                Together.
+            </h1>
+            {# Subtext #}
+            <p class="hero-subtext text-lg sm:text-xl text-white/90 max-w-xl mb-10 opacity-0 animate-slide-up-fade" style="--delay: 0.35s;">
+                We turn barriers into opportunity by equipping individuals with skills, jobs, and community support that create lasting stability and dignity.
+            </p>
+            {# CTA buttons - staggered #}
+            <div class="hero-ctas flex flex-wrap gap-4 opacity-0 animate-slide-up-fade" style="--delay: 0.5s;">
+                <a href="#donate" class="hero-btn-primary inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-base transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal">
+                    Donate Now
+                    <span class="hero-btn-arrow inline-block transition-transform duration-300" aria-hidden="true">→</span>
+                </a>
+                <a href="#about" class="hero-btn-secondary inline-flex items-center px-6 py-3.5 rounded-full border-2 border-white text-white font-semibold text-base transition-all duration-300 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal">
+                    Learn About Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

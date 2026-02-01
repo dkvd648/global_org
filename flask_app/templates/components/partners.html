@@ -1,0 +1,65 @@
+{# Our Partners Section - Global Economic Foundation
+   Centered layout with partner logo grid.
+   Displays logos in full color with hover lift effect.
+#}
+<section id="partners" class="partners-section" aria-labelledby="partners-heading" data-partners-section>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    
+    {# Header with accent line #}
+    <div class="partners-header" data-scroll-reveal data-reveal-order="0">
+      {# Thin red accent line #}
+      <div class="partners-accent-line" aria-hidden="true"></div>
+      
+      {# Heading #}
+      <h2 id="partners-heading" class="partners-heading">
+        Our <span class="partners-heading-serif">Partners</span>
+      </h2>
+    </div>
+
+    {# Partner Logos Grid #}
+    <div class="partners-grid">
+      
+      {# Partner 1: Renew Org #}
+      <div class="partner-card" data-scroll-reveal data-reveal-order="1">
+        <img
+          src="{{ url_for('static', filename='images/renew-org.png') }}"
+          alt="Renew Organization logo"
+          class="partner-logo"
+          loading="lazy"
+        />
+      </div>
+
+      {# Partner 2: Uplifting #}
+      <div class="partner-card" data-scroll-reveal data-reveal-order="2">
+        <img
+          src="{{ url_for('static', filename='images/LOGO-uplifting.png') }}"
+          alt="Uplifting logo"
+          class="partner-logo"
+          loading="lazy"
+        />
+      </div>
+
+      {# Partner 3: IIS #}
+      <div class="partner-card" data-scroll-reveal data-reveal-order="3">
+        <img
+          src="{{ url_for('static', filename='images/iis-logo-new.png') }}"
+          alt="IIS logo"
+          class="partner-logo"
+          loading="lazy"
+        />
+      </div>
+
+      {# Partner 4: ASKI #}
+      <div class="partner-card" data-scroll-reveal data-reveal-order="4">
+        <img
+          src="{{ url_for('static', filename='images/ASKI-1.png') }}"
+          alt="ASKI logo"
+          class="partner-logo"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+
+  </div>
+</section>
