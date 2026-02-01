@@ -58,6 +58,7 @@ html {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  transition: background 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Nav link - hover underline animation */
@@ -244,7 +245,7 @@ html {
 .about-section [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
 }
 
 .about-section--revealed [data-scroll-reveal] {
@@ -353,7 +354,7 @@ html {
 .what-we-do-section [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
 }
 
 .what-we-do-section--revealed [data-scroll-reveal] {
@@ -387,15 +388,16 @@ html {
     overflow: hidden;
   }
 
-  .what-we-do-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
+.what-we-do-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 }
 
 /* Row card: lift on hover, equal-height blocks attached (no gap on lg) */
@@ -480,7 +482,7 @@ html {
 .how-we-make-it-happen-section [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
 }
 
 .how-we-make-it-happen-section--revealed [data-scroll-reveal] {
@@ -508,7 +510,7 @@ html {
 
 /* Process card: relative container for absolute accent bar */
 .process-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
   background-color: #faf9f6;
 }
 
@@ -695,10 +697,26 @@ html {
   gap: 1.5rem;
 }
 
+/* Scroll reveal for impact cards */
+.impact-stats-section [data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+}
+
+.impact-stats-section--revealed [data-scroll-reveal] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.impact-stats-section [data-reveal-order="0"] { transition-delay: 0ms; }
+.impact-stats-section [data-reveal-order="1"] { transition-delay: 100ms; }
+.impact-stats-section [data-reveal-order="2"] { transition-delay: 200ms; }
+
 .impact-card {
   border-radius: 20px;
   padding: 3rem 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .impact-card:hover {
@@ -734,10 +752,30 @@ html {
   background: #67e8f9;
 }
 
-/* Responsive */
+/* Impact stats: mobile responsive */
 @media (max-width: 768px) {
+  .impact-stats-section {
+    padding: 4rem 1rem 4.5rem;
+  }
   .impact-stats-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .impact-card {
+    padding: 2rem 1.5rem;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-stats-section {
+    padding: 3rem 0.75rem 4rem;
+  }
+  .impact-card {
+    padding: 1.75rem 1.25rem;
+  }
+  .impact-number {
+    font-size: 2.25rem;
   }
 }
 
@@ -805,6 +843,15 @@ html {
   }
 }
 
+@media (max-width: 639px) {
+  .join-us-content-block {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .join-us-headline {
+    font-size: 1.75rem;
+  }
+}
+
 .join-us-content-inner {
   max-width: 540px;
 }
@@ -845,7 +892,7 @@ html {
 .join-us-section [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
 }
 
 .join-us-section--revealed [data-scroll-reveal] {
@@ -870,6 +917,13 @@ html {
   }
 }
 
+@media (max-width: 767px) {
+  .join-us-cta-strip .join-us-strip-btn {
+    min-height: 52px;
+    padding: 1rem 1.25rem;
+  }
+}
+
 .join-us-strip-btn {
   display: flex;
   align-items: center;
@@ -885,7 +939,7 @@ html {
   border: none;
   border-radius: 0;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition: background-color var(--transition-smooth), transform var(--transition-base);
 }
 
 .join-us-strip-btn:hover,
@@ -940,7 +994,7 @@ html {
   border-radius: 16px;
   padding: 2rem 1.75rem;
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
   overflow: hidden;
 }
 
@@ -1080,7 +1134,7 @@ html {
 .testimonials-section [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
 }
 
 .testimonials-section--revealed [data-scroll-reveal] {
@@ -1172,7 +1226,7 @@ html {
   border-radius: 12px;
   padding: 2rem 1.5rem;
   min-height: 140px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .partner-card:hover {
@@ -1199,7 +1253,7 @@ html {
 .partners-section [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
 }
 
 .partners-section--revealed [data-scroll-reveal] {
@@ -1235,6 +1289,16 @@ html {
   color: #0f172a;
   padding: 4rem 1.5rem 2rem;
   border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding: 3rem 1rem 1.5rem;
+  }
+  .footer-grid {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .footer-inner {
@@ -1386,4 +1450,59 @@ html {
 .footer-bottom-link:hover,
 .footer-bottom-link:focus-visible {
   color: #16a34a;
+}
+
+/* ============================================
+   Scroll progress bar (top of viewport)
+   ============================================ */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(22, 163, 74, 0.2);
+  z-index: 9999;
+  transform-origin: left;
+  transition: transform 0.1s ease-out;
+}
+
+.scroll-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.12s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress-bar,
+  .scroll-progress-bar-fill {
+    display: none;
+  }
+}
+
+/* About section: mobile spacing */
+@media (max-width: 639px) {
+  .about-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .about-hero .grid {
+    padding: 1rem !important;
+    gap: 1.5rem;
+  }
+  .about-cta-primary,
+  .about-cta-secondary {
+    min-height: 48px;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* Testimonials: mobile card spacing */
+@media (max-width: 479px) {
+  .testimonials-heading {
+    font-size: 1.5rem;
+  }
 }
