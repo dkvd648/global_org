@@ -10,13 +10,8 @@
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(22,163,74,0.06)_0%,transparent_60%)]" aria-hidden="true"></div>
 
   <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center">
-    {# Logo #}
-    <a href="{{ url_for('main.index') }}" class="inline-block mb-12 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
-      <img src="{{ url_for('static', filename='images/logo-website.png') }}" alt="Global Economic Foundation" class="h-12 sm:h-14 w-auto mx-auto hover:opacity-90 transition-opacity">
-    </a>
-
     {# Pill label #}
-    <p class="inline-block px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider mb-8 text-white" style="background-color: #16a34a;">
+    <p class="inline-block px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider mb-8 text-white block mx-auto" style="background-color: #dc2626;">
       Under Construction
     </p>
 
@@ -36,12 +31,6 @@
       <span class="inline-block transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
     </a>
 
-    {# Decorative elements #}
-    <div class="mt-20 flex justify-center gap-4 opacity-40">
-      <div class="w-2 h-2 rounded-full bg-primary"></div>
-      <div class="w-2 h-2 rounded-full bg-primary animate-pulse" style="animation-delay: 0.2s;"></div>
-      <div class="w-2 h-2 rounded-full bg-primary animate-pulse" style="animation-delay: 0.4s;"></div>
-    </div>
   </div>
 </div>
 {% endblock %}

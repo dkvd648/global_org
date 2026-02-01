@@ -359,23 +359,30 @@ html {
 .about-cta-primary {
   background-color: #0f172a;
   color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-cta-primary:hover,
 .about-cta-primary:focus-visible {
-  background-color: #1c8fc8;
+  background-color: #f8fafc;
+  color: #0f172a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
 }
 
 .about-cta-secondary {
   border-color: #0f172a;
   color: #0f172a;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-cta-secondary:hover,
 .about-cta-secondary:focus-visible {
-  background-color: #1c8fc8;
-  border-color: #1c8fc8;
-  color: white;
+  background-color: #0f172a;
+  border-color: #0f172a;
+  color: #f8fafc;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
 }
 
 /* ---------- What We Do Section ---------- */
@@ -978,13 +985,26 @@ html {
   color: #ffffff;
   text-decoration: none;
   margin-top: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.join-us-donate-btn:hover {
-  background-color: #1e293b !important;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+.join-us-donate-btn:hover,
+.join-us-donate-btn:focus-visible {
+  background-color: #f8fafc !important;
+  color: #0f172a;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.15);
+}
+
+.join-us-donate-btn:hover .join-us-donate-icon,
+.join-us-donate-btn:focus-visible .join-us-donate-icon {
+  color: #0f172a;
+  animation: join-us-icon-pulse 0.5s ease-out;
+}
+
+@keyframes join-us-icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
 }
 
 .join-us-donate-icon {
