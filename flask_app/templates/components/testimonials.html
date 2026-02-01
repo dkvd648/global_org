@@ -1,95 +1,102 @@
-{# Testimonials Section - Global Economic Foundation
-   Two-column layout: testimonial cards left, section header right.
-   Stacks vertically on mobile.
-#}
-<section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading" data-testimonials-section>
+{# Testimonials Section - One card carousel with title, subheading, arrows, dots #}
+<section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-title" data-testimonials-section>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      
-      {# Left: Testimonial Cards #}
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" data-scroll-reveal data-reveal-order="0">
-        
-        {# Card 1 #}
-        <div class="testimonial-card">
-          {# Quote watermark #}
-          <div class="testimonial-quote-icon" aria-hidden="true">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
-            </svg>
+    {# Section header - same structure as How we make it happen #}
+    <header class="text-center mb-14 sm:mb-18 lg:mb-20">
+      <p class="testimonials-pill inline-block px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider mb-6 text-white italic" style="background-color: #dc2626;" data-scroll-reveal data-reveal-order="0">
+        TESTIMONIALS
+      </p>
+      <h2 id="testimonials-title" class="font-sans text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight tracking-tight max-w-3xl mx-auto" data-scroll-reveal data-reveal-order="1">
+        Stories of <span class="font-[family-name:var(--font-instrument-serif)] italic" style="font-family: 'Instrument Serif', Georgia, serif;">Impact</span>
+      </h2>
+      <p class="testimonials-subheading mt-4 text-lg text-gray-600 max-w-2xl mx-auto font-sans font-normal">
+        Hear from those whose lives have been transformed through our programs
+      </p>
+    </header>
+
+    {# Carousel: one card, arrows, dots #}
+    <div class="testimonials-carousel relative">
+      <div class="testimonials-track-wrapper overflow-hidden">
+        <div id="testimonials-track" class="testimonials-track flex transition-transform duration-500 ease-out" aria-live="polite">
+          {# Card 1 - Jonas White #}
+          <div class="testimonial-slide px-2 sm:px-4" data-slide-index="0">
+            <div class="testimonial-card-single">
+              <div class="testimonial-quote-icon-single" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor" class="testimonial-quote-svg">
+                  <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
+                </svg>
+              </div>
+              <blockquote class="testimonial-quote-text">
+                "GEF's program changed my life. I started my own shop and now employ two others."
+              </blockquote>
+              <div class="testimonial-author-single flex items-center gap-4 mt-6">
+                <div class="testimonial-avatar rounded-full bg-charcoal/10 flex items-center justify-center text-charcoal font-display font-semibold text-lg w-12 h-12 flex-shrink-0" aria-hidden="true">JW</div>
+                <div>
+                  <p class="testimonial-name-single font-display font-semibold text-charcoal text-base">Jonas White</p>
+                  <p class="testimonial-role-single font-sans text-sm text-gray-500 mt-0.5">Small Business Owner</p>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          {# Star rating #}
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">
-            {% for i in range(5) %}
-            <svg class="testimonial-star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            {% endfor %}
+
+          {# Card 2 - Sasa Gray #}
+          <div class="testimonial-slide px-2 sm:px-4" data-slide-index="1">
+            <div class="testimonial-card-single">
+              <div class="testimonial-quote-icon-single" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor" class="testimonial-quote-svg">
+                  <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
+                </svg>
+              </div>
+              <blockquote class="testimonial-quote-text">
+                "GEF believed in my idea when no one else did. With their guidance, I turned a small food stall into a thriving business."
+              </blockquote>
+              <div class="testimonial-author-single flex items-center gap-4 mt-6">
+                <div class="testimonial-avatar rounded-full bg-charcoal/10 flex items-center justify-center text-charcoal font-display font-semibold text-lg w-12 h-12 flex-shrink-0" aria-hidden="true">SG</div>
+                <div>
+                  <p class="testimonial-name-single font-display font-semibold text-charcoal text-base">Sasa Gray</p>
+                  <p class="testimonial-role-single font-sans text-sm text-gray-500 mt-0.5">Small Business Owner</p>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          {# Testimonial text #}
-          <blockquote class="testimonial-text">
-            "GEF's program changed my life. I started my own shop and now employ two others."
-          </blockquote>
-          
-          {# Author #}
-          <div class="testimonial-author">
-            <p class="testimonial-name">Jonas White</p>
-            <p class="testimonial-role">Small Business Owner</p>
+
+          {# Card 3 - Aisha Patel #}
+          <div class="testimonial-slide px-2 sm:px-4" data-slide-index="2">
+            <div class="testimonial-card-single">
+              <div class="testimonial-quote-icon-single" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor" class="testimonial-quote-svg">
+                  <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
+                </svg>
+              </div>
+              <blockquote class="testimonial-quote-text">
+                "GEF believed in my small business idea when no one else did. The microfinance program and business planning support helped me turn my dream into reality."
+              </blockquote>
+              <div class="testimonial-author-single flex items-center gap-4 mt-6">
+                <div class="testimonial-avatar rounded-full bg-charcoal/10 flex items-center justify-center text-charcoal font-display font-semibold text-lg w-12 h-12 flex-shrink-0" aria-hidden="true">AP</div>
+                <div>
+                  <p class="testimonial-name-single font-display font-semibold text-charcoal text-base">Aisha Patel</p>
+                  <p class="testimonial-role-single font-sans text-sm text-gray-500 mt-0.5">Small Business Owner</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        {# Card 2 #}
-        <div class="testimonial-card">
-          {# Quote watermark #}
-          <div class="testimonial-quote-icon" aria-hidden="true">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
-            </svg>
-          </div>
-          
-          {# Star rating #}
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">
-            {% for i in range(5) %}
-            <svg class="testimonial-star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            {% endfor %}
-          </div>
-          
-          {# Testimonial text #}
-          <blockquote class="testimonial-text">
-            "GEF believed in my idea when no one else did. With their guidance, I turned a small food stall into a thriving business."
-          </blockquote>
-          
-          {# Author #}
-          <div class="testimonial-author">
-            <p class="testimonial-name">Sasa Gray</p>
-            <p class="testimonial-role">Small Business Owner</p>
-          </div>
-        </div>
-
       </div>
 
-      {# Right: Section Header and CTA #}
-      <div class="testimonials-header lg:pl-8" data-scroll-reveal data-reveal-order="1">
-        {# Small label #}
-        <p class="testimonials-pill">TESTIMONIALS</p>
-        
-        {# Heading with serif emphasis #}
-        <h2 id="testimonials-heading" class="testimonials-heading">
-          Success <span class="testimonials-heading-serif">Stories</span>
-        </h2>
-        
-        {# CTA Button #}
-        <a href="#stories" class="testimonials-cta-btn">
-          MORE STORIES
-          <svg class="testimonials-cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
+      {# Previous / Next arrows #}
+      <button type="button" id="testimonials-prev" class="testimonials-arrow testimonials-arrow-prev absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 hover:text-charcoal focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors" aria-label="Previous testimonial">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" id="testimonials-next" class="testimonials-arrow testimonials-arrow-next absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 hover:text-charcoal focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors" aria-label="Next testimonial">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
 
+      {# Pagination dots #}
+      <div class="testimonials-dots flex justify-center gap-2 mt-8" role="tablist" aria-label="Testimonial slides">
+        <button type="button" class="testimonials-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors" data-dot-index="0" aria-label="Go to testimonial 1" aria-selected="true"></button>
+        <button type="button" class="testimonials-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors" data-dot-index="1" aria-label="Go to testimonial 2" aria-selected="false"></button>
+        <button type="button" class="testimonials-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors" data-dot-index="2" aria-label="Go to testimonial 3" aria-selected="false"></button>
+      </div>
     </div>
   </div>
 </section>

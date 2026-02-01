@@ -8,3 +8,9 @@ main_bp = Blueprint("main", __name__)
 def index():
     """Home page."""
     return render_template("index.html")
+
+
+@main_bp.route("/coming-soon")
+def coming_soon():
+    """Coming soon placeholder page."""
+    return render_template("coming_soon.html")

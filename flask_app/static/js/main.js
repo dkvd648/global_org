@@ -265,4 +265,41 @@
     );
     observer.observe(section);
   })();
+
+  /* ---------- Testimonials carousel: one card, arrows, dots ---------- */
+  (function () {
+    var track = document.getElementById('testimonials-track');
+    var prevBtn = document.getElementById('testimonials-prev');
+    var nextBtn = document.getElementById('testimonials-next');
+    var dots = document.querySelectorAll('.testimonials-dot');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    var slides = track.querySelectorAll('.testimonial-slide');
+    var total = slides.length;
+    var current = 0;
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100 / total) + '%)';
+      dots.forEach(function (dot, i) {
+        dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        dot.classList.toggle('active', i === current);
+      });
+    }
+
+    prevBtn.addEventListener('click', function () {
+      goTo(current - 1);
+    });
+    nextBtn.addEventListener('click', function () {
+      goTo(current + 1);
+    });
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var index = parseInt(dot.getAttribute('data-dot-index'), 10);
+        goTo(index);
+      });
+    });
+
+    goTo(0);
+  })();
 })();

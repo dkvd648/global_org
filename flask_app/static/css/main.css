@@ -61,6 +61,15 @@ html {
   transition: background 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* Coming soon page: nav always solid (no hero background) */
+.page-coming-soon .nav-bar {
+  opacity: 1;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
 /* Nav link - hover underline animation */
 .nav-link {
   padding: 0.5rem 0.75rem;
@@ -163,6 +172,13 @@ html {
   font-weight: 400;
 }
 
+.hero-heading-sans {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
 .hero-bg-image {
   animation: hero-zoom 22s ease-out forwards;
   transform: scale(1.06);
@@ -210,21 +226,34 @@ html {
   }
 }
 
-/* Hero primary CTA - white background, black text */
+/* Hero primary CTA - white background, black text, donation icon */
 .hero-btn-primary {
   background-color: #ffffff !important;
   color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .hero-btn-primary:hover,
 .hero-btn-primary:focus-visible {
   background-color: #f1f5f9 !important;
   color: #0f172a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hero-btn-primary:hover .hero-btn-donate-icon,
+.hero-btn-primary:focus-visible .hero-btn-donate-icon {
+  animation: hero-donate-icon-pulse 0.6s ease-out;
 }
 
 .hero-btn-primary:hover .hero-btn-arrow,
 .hero-btn-primary:focus-visible .hero-btn-arrow {
   transform: translateX(4px);
+}
+
+@keyframes hero-donate-icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
 }
 
 /* Hero secondary - subtle fill on hover */
@@ -452,27 +481,82 @@ html {
   transform: translateY(-2px);
 }
 
-/* Pill button: black default, green on hover; arrow slides on hover */
-.what-we-do-btn {
-  border-color: #0f172a;
+/* ============================================
+   Learn More Button - Framer-style micro interaction
+   Default: circular arrow + text, no border.
+   Hover/Focus: pill expands, text slides inside, dark bg, white text.
+   Pure CSS, no JS. Keyboard accessible.
+   ============================================ */
+.learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
   color: #0f172a;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.what-we-do-btn:hover,
-.what-we-do-btn:focus-visible {
-  border-color: #16a34a;
-  color: #16a34a;
+.learn-more-btn .learn-more-btn-icon {
+  width: 44px;
+  height: 44px;
+  background: #1f2937;
+  color: #ffffff;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition:
+    width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.35s ease;
 }
 
-.what-we-do-btn:hover .what-we-do-btn-arrow,
-.what-we-do-btn:focus-visible .what-we-do-btn-arrow {
-  transform: translateX(4px);
+.learn-more-btn .learn-more-btn-text {
+  white-space: nowrap;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
 }
 
-/* Generous touch spacing for mobile */
+/* Hover: pill expands, text slides inside, dark bg, white text */
+.learn-more-btn:hover,
+.learn-more-btn:focus-visible {
+  color: #ffffff;
+  outline: none;
+}
+
+.learn-more-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.4);
+  border-radius: 999px;
+}
+
+/* Icon expands to the right only; arrow stays fixed on the left */
+.learn-more-btn:hover .learn-more-btn-icon,
+.learn-more-btn:focus-visible .learn-more-btn-icon {
+  width: 175px;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 12px;
+  box-shadow: 0 4px 12px rgba(31, 41, 55, 0.25);
+}
+
+/* Text slides left so it sits beside the arrow with a small gap */
+.learn-more-btn:hover .learn-more-btn-text,
+.learn-more-btn:focus-visible .learn-more-btn-text {
+  transform: translateX(-143px);
+  opacity: 1;
+}
+
+/* Touch-friendly on mobile */
 @media (max-width: 640px) {
-  .what-we-do-btn {
-    padding: 0.75rem 1.25rem;
+  .learn-more-btn .learn-more-btn-icon {
+    min-width: 44px;
     min-height: 44px;
   }
 }
@@ -888,6 +972,31 @@ html {
   max-width: 440px;
 }
 
+/* Donation button - black background, donation (heart) icon */
+.join-us-donate-btn {
+  background-color: #0f172a !important;
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.join-us-donate-btn:hover {
+  background-color: #1e293b !important;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+}
+
+.join-us-donate-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-us-donate-icon svg {
+  flex-shrink: 0;
+}
+
 /* Scroll reveal: fade in on scroll */
 .join-us-section [data-scroll-reveal] {
   opacity: 0;
@@ -981,156 +1090,149 @@ html {
 
 /* ============================================
    Testimonials Section
-   Two-column layout: cards left, header right
+   One-card carousel: title, subheading, arrows, dots
    ============================================ */
 .testimonials-section {
   background-color: #faf9f6;
 }
 
-/* Testimonial card styling */
-.testimonial-card {
+.testimonials-section-header {
+  text-align: center;
+}
+
+.testimonials-title {
+  font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.testimonials-subheading {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Carousel wrapper */
+.testimonials-carousel {
   position: relative;
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 2rem 1.75rem;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.testimonials-track-wrapper {
   overflow: hidden;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+.testimonials-track {
+  display: flex;
+  will-change: transform;
+  width: 300%;
 }
 
-/* Quote watermark icon */
-.testimonial-quote-icon {
+.testimonial-slide {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+}
+
+/* Single testimonial card */
+.testimonial-card-single {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Quote icon - top left, orange/coral */
+.testimonial-quote-icon-single {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: rgba(239, 68, 68, 0.12);
+  top: 1.25rem;
+  left: 1.5rem;
   pointer-events: none;
 }
 
-/* Star rating */
-.testimonial-stars {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 1rem;
+.testimonial-quote-svg {
+  color: #ea580c;
+  opacity: 0.9;
 }
 
-.testimonial-star {
-  color: #fbbf24;
-}
-
-/* Testimonial text */
-.testimonial-text {
+/* Quote text - italic, dark grey */
+.testimonial-quote-text {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: #374151;
-  margin: 0 0 1.5rem;
-  font-style: normal;
+  font-style: italic;
+  margin: 3rem 0 0;
+  padding: 0;
 }
 
-/* Author info */
-.testimonial-author {
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+@media (min-width: 640px) {
+  .testimonial-quote-text {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Author row - avatar + name + role */
+.testimonial-author-single {
+  margin-top: auto;
   padding-top: 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.testimonial-name {
+.testimonial-name-single {
   font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
   font-weight: 600;
-  font-size: 0.9375rem;
   color: #0f172a;
   margin: 0;
 }
 
-.testimonial-role {
+.testimonial-role-single {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.8125rem;
   color: #6b7280;
-  margin: 0.25rem 0 0;
+  margin: 0;
 }
 
-/* Section header (right side) */
-.testimonials-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+/* Arrow buttons - positioned at far left and right of carousel */
+.testimonials-arrow {
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.testimonials-arrow-prev {
+  left: 0;
+}
+
+.testimonials-arrow-next {
+  right: 0;
 }
 
 @media (min-width: 1024px) {
-  .testimonials-header {
-    padding-top: 2rem;
+  .testimonials-arrow-prev {
+    left: -3rem;
+  }
+  .testimonials-arrow-next {
+    right: -3rem;
   }
 }
 
-/* Small label pill */
-.testimonials-pill {
-  font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #6b7280;
-  margin: 0 0 1rem;
+/* Pagination dots - active = orange */
+.testimonials-dot {
+  transition: background-color var(--transition-base), transform var(--transition-base);
 }
 
-/* Heading with serif emphasis */
-.testimonials-heading {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  color: #0f172a;
-  line-height: 1.2;
-  margin: 0 0 2rem;
+.testimonials-dot.active,
+.testimonials-dot[aria-selected="true"] {
+  background-color: #ea580c !important;
+  transform: scale(1.2);
 }
 
-.testimonials-heading-serif {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-style: italic;
-}
-
-/* CTA Button */
-.testimonials-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  background-color: #ef4444;
-  color: #ffffff;
-  font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.25s ease, transform 0.2s ease;
-}
-
-.testimonials-cta-btn:hover,
-.testimonials-cta-btn:focus-visible {
-  background-color: #dc2626;
-  transform: translateY(-2px);
-}
-
-.testimonials-cta-btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.4);
-}
-
-.testimonials-cta-arrow {
-  transition: transform 0.2s ease;
-}
-
-.testimonials-cta-btn:hover .testimonials-cta-arrow,
-.testimonials-cta-btn:focus-visible .testimonials-cta-arrow {
-  transform: translateX(4px);
-}
-
-/* Scroll reveal animations */
+/* Scroll reveal (section header only, optional) */
 .testimonials-section [data-scroll-reveal] {
   opacity: 0;
   transform: translateY(32px);
@@ -1142,18 +1244,29 @@ html {
   transform: translateY(0);
 }
 
-.testimonials-section [data-reveal-order="0"] { transition-delay: 0ms; }
-.testimonials-section [data-reveal-order="1"] { transition-delay: 150ms; }
-
-/* Mobile adjustments */
 @media (max-width: 639px) {
-  .testimonial-card {
-    padding: 1.5rem 1.25rem;
+  .testimonial-card-single {
+    padding: 2rem 1.5rem 1.75rem;
+    min-height: 260px;
   }
-  
-  .testimonials-header {
-    text-align: center;
-    align-items: center;
+  .testimonial-quote-icon-single {
+    top: 1rem;
+    left: 1.25rem;
+  }
+  .testimonial-quote-svg {
+    width: 48px;
+    height: 48px;
+  }
+  .testimonial-quote-text {
+    margin-top: 2.5rem;
+  }
+  .testimonials-arrow-prev {
+    left: 0;
+    transform: translateY(-50%);
+  }
+  .testimonials-arrow-next {
+    right: 0;
+    transform: translateY(-50%);
   }
 }
 
@@ -1500,9 +1613,9 @@ html {
   }
 }
 
-/* Testimonials: mobile card spacing */
+/* Testimonials: mobile title */
 @media (max-width: 479px) {
-  .testimonials-heading {
+  .testimonials-title {
     font-size: 1.5rem;
   }
 }

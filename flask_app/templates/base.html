@@ -32,7 +32,7 @@
     </script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
-<body class="font-sans text-charcoal antialiased">
+<body class="font-sans text-charcoal antialiased {% block body_extra_class %}{% endblock %}">
     {% block body %}
     {% endblock %}
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

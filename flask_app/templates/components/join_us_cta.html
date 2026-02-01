@@ -24,19 +24,27 @@
         <p class="join-us-body" data-scroll-reveal data-reveal-order="1">
           Every action counts, and your support can create real lasting change. Together, we can make impact.
         </p>
+        <a href="{{ url_for('main.coming_soon') }}" class="join-us-donate-btn inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-charcoal text-white font-display font-semibold text-base transition-all duration-300 hover:bg-charcoal/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" data-scroll-reveal data-reveal-order="1">
+          <span class="join-us-donate-icon flex-shrink-0" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </span>
+          Donate Now
+        </a>
       </div>
     </div>
   </div>
 
   {# ---------- CTA Strip: Three Buttons ---------- #}
   <div class="join-us-cta-strip">
-    <a href="#mentor" class="join-us-strip-btn join-us-strip-btn-blue">
+    <a href="{{ url_for('main.coming_soon') }}" class="join-us-strip-btn join-us-strip-btn-blue">
       BECOME A MENTOR
     </a>
-    <a href="#partner" class="join-us-strip-btn join-us-strip-btn-green">
+    <a href="{{ url_for('main.coming_soon') }}" class="join-us-strip-btn join-us-strip-btn-green">
       PARTNER WITH US
     </a>
-    <a href="#volunteer" class="join-us-strip-btn join-us-strip-btn-red">
+    <a href="{{ url_for('main.coming_soon') }}" class="join-us-strip-btn join-us-strip-btn-red">
       VOLUNTEER LOCALLY OR VIRTUALLY
     </a>
   </div>

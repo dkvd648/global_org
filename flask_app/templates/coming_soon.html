@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Coming Soon – Global Economic Foundation{% endblock %}
+{% block body_extra_class %}page-coming-soon{% endblock %}
+
+{% block body %}
+{% include "components/navbar.html" %}
+<div class="coming-soon-page min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20">
+  {# Subtle gradient background - matches site palette #}
+  <div class="absolute inset-0 bg-gradient-to-br from-[#f8fcf9] via-white to-[#f2f9f4]" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(22,163,74,0.06)_0%,transparent_60%)]" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center">
+    {# Logo #}
+    <a href="{{ url_for('main.index') }}" class="inline-block mb-12 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+      <img src="{{ url_for('static', filename='images/logo-website.png') }}" alt="Global Economic Foundation" class="h-12 sm:h-14 w-auto mx-auto hover:opacity-90 transition-opacity">
+    </a>
+
+    {# Pill label #}
+    <p class="inline-block px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider mb-8 text-white" style="background-color: #16a34a;">
+      Under Construction
+    </p>
+
+    {# Main heading - Instrument Serif to match site #}
+    <h1 class="font-normal text-4xl sm:text-5xl lg:text-6xl text-charcoal leading-tight mb-6" style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic;">
+      Something wonderful<br>is on the way
+    </h1>
+
+    {# Subtext #}
+    <p class="text-lg sm:text-xl text-gray-600 max-w-md mx-auto mb-12 leading-relaxed">
+      We're building something special. Check back soon to discover how we're turning barriers into opportunity, together.
+    </p>
+
+    {# Back to home CTA #}
+    <a href="{{ url_for('main.index') }}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-charcoal text-white font-semibold text-base transition-all duration-300 hover:bg-[#1e293b] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+      Back to Home
+      <span class="inline-block transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+    </a>
+
+    {# Decorative elements #}
+    <div class="mt-20 flex justify-center gap-4 opacity-40">
+      <div class="w-2 h-2 rounded-full bg-primary"></div>
+      <div class="w-2 h-2 rounded-full bg-primary animate-pulse" style="animation-delay: 0.2s;"></div>
+      <div class="w-2 h-2 rounded-full bg-primary animate-pulse" style="animation-delay: 0.4s;"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
