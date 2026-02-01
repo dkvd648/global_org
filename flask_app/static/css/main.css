@@ -102,6 +102,20 @@ html {
   color: rgba(255, 255, 255, 0.95);
 }
 
+/* Nav CTA button - hero accent green (#6CBE7E), same as "Together." */
+.nav-cta-btn-accent {
+  background-color: #6CBE7E;
+}
+
+.nav-cta-btn-accent:hover,
+.nav-cta-btn-accent:focus-visible {
+  background-color: #5cad6d;
+}
+
+.nav-cta-btn-accent:focus-visible {
+  box-shadow: 0 0 0 2px rgba(108, 190, 126, 0.5);
+}
+
 /* Nav CTA button - arrow moves on hover */
 .nav-cta-btn:hover .nav-cta-arrow,
 .nav-cta-btn:focus-visible .nav-cta-arrow {
@@ -345,6 +359,16 @@ html {
     object-fit: cover;
     object-position: center;
   }
+}
+
+/* About credibility card - document icon with light pink tint */
+.about-credibility-icon {
+  background: rgba(236, 72, 153, 0.12);
+  color: rgba(157, 23, 77, 0.8);
+}
+
+.about-credibility-icon svg {
+  color: inherit;
 }
 
 /* About hero image - soft shadow, rounded corners */
