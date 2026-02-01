@@ -162,8 +162,18 @@ html {
 
 /* ---------- Hero ---------- */
 .hero-section {
-  /* Ensure content has high contrast (accessibility) */
   color: #ffffff;
+}
+
+/* Hero content box - no background, rounded */
+.hero-content-box {
+  background: transparent;
+  border: none;
+}
+
+/* Green accent for "Together." - matches design #6CBE7E */
+.text-hero-accent {
+  color: #6CBE7E;
 }
 
 .hero-heading-serif {
@@ -179,16 +189,35 @@ html {
   letter-spacing: -0.02em;
 }
 
+/* Background image - slight blur for cinematic feel */
 .hero-bg-image {
   animation: hero-zoom 22s ease-out forwards;
   transform: scale(1.06);
   transition: transform 0.5s ease-out;
+  filter: blur(1px);
 }
 
 @keyframes hero-zoom {
   to {
     transform: scale(1);
   }
+}
+
+/* Hero primary CTA - dark filled, white border, white text (per design) */
+.hero-btn-primary {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn-primary:hover,
+.hero-btn-primary:focus-visible {
+  background-color: rgba(15, 23, 42, 1) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 /* Hero: mobile padding and typography */
@@ -226,40 +255,18 @@ html {
   }
 }
 
-/* Hero primary CTA - white background, black text, donation icon */
-.hero-btn-primary {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.hero-btn-primary:hover,
-.hero-btn-primary:focus-visible {
-  background-color: #f1f5f9 !important;
-  color: #0f172a !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.hero-btn-primary:hover .hero-btn-donate-icon,
-.hero-btn-primary:focus-visible .hero-btn-donate-icon {
-  animation: hero-donate-icon-pulse 0.6s ease-out;
-}
-
+/* Hero primary CTA - arrow moves on hover */
 .hero-btn-primary:hover .hero-btn-arrow,
 .hero-btn-primary:focus-visible .hero-btn-arrow {
   transform: translateX(4px);
 }
 
-@keyframes hero-donate-icon-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-/* Hero secondary - subtle fill on hover */
+/* Hero secondary - subtle fill and scale on hover */
 .hero-btn-secondary:hover,
 .hero-btn-secondary:focus-visible {
   background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ---------- Navbar fade-in on page load ---------- */
